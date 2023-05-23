@@ -6,8 +6,11 @@
  $userEmail = $_POST["user-email"]; 
  $userMessage = $_POST["user-message"]; 
 
- $headers .= "Content-type: text/html;\r\n";
- $headers .= "From: $userEmail";
+//  $headers .= "Content-type: text/html;\r\n";
+//  $headers .= "From: $userEmail";
+
+ $headers .= "MIME-Version: 1.0\r\n";
+ $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
  mail($to, $Subject, $userMessage, $headers);
  echo "Email has been sent! Thank you $userName";
